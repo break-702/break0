@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>BREAK</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: rgb(15, 27, 37);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.description {
+    color: #a4f1ff;
+}
+
+.logo {
+    text-decoration: none;
+    color: #3ad8f4;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+.navigation a {
+    color: #a4f1ff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+}
+
+.navigation a:hover {
+    color: #567e85;
+}
+
+section {
+    padding: 100px 200px;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(images/background.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main h2 {
+    color: #ffffff;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.main h3 {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.main h2 span {
+    display: inline-block;
+    margin-top: 10px;
+    color: #a4f1ff;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.main-btn {
+    color: #0f0d8b;
+    background-color: #a4f1ff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    transition: 0.7s ease;
+}
+
+.main-btn:hover {
+    background-color: #3e5a5f;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.icons {
+    color: #a4f1ff;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    padding-right: 30px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.icons:hover {
+    color: #3e5a5f;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #46757e;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.title-2 {
+    display: flex;
+    justify-content: center;
+    color: #9dc6ce;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.content-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: 0.7s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    color: #207180;
+    font-size: 4em;
+    text-align: center;
+}
+
+.info h3 {
+    color: #000000;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.info p {
+    color: #000000;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.title-1 {
+    color: #46757e;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.project .content-2 {
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-image img {
+    opacity: 0.9;
+}
+
+.project-image {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.project-info {
+    padding: 1em;
+}
+
+.project-category {
+    font-size: 0.8em;
+    color: #000000;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.more-details {
+    text-decoration: none;
+    color: #5798a3;
+    text-shadow: 50px 5px 50px #0a0a0a;
+}
+
+.more-details:hover {
+    color: #3e5a5f;
+}
+
+.contact {
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: #ffffff;
+}
+
+.footer {
+    background-color: rgb(15, 27, 37);
+    color: #a4f1ff;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-title {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.footer-title span {
+    color: #719aa0;
+}
+
+.footer .social-icons a {
+    font-size: 1.3em;
+    padding: 0 12px 0 0;
+    color: #ffffff;
+}
+.menu-icon {
+    display: none;
+    color: #a4f1ff;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+.main h2, .main h3 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-btn {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background-color: #0f1b25;
+        width: 100%;
+        height: calc(100% - 60px);
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation a {
+        padding: 15px 0;
+        font-size: 1.3em;
+        text-align: center;
+    }
+}
+
+
+/* الاستعلامات الإعلامية لجعل الموقع متجاوباً */
+@media (max-width: 1200px) {
+    section {
+        padding: 80px 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 70px 100px;
+    }
+    .navigation a {
+        padding-left: 15px;
+        font-size: 1em;
+    }
+    .content-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card, .project-card {
+        width: 18em;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    .main h2 span {
+        font-size: 2.5em;
+    }
+    .main-btn {
+        font-size: 1em;
+        padding: 0.75em 1.75em;
+    }
+    section {
+        padding: 50px 20px;
+    }
+    .title, .title-2, .title-1 {
+        font-size: 1.8em;
+    }
+    .project-card, .card {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation a {
+        padding-left: 0;
+        margin: 5px 0;
+        font-size: 1em;
+    }
+    .main h2 {
+        font-size: 1.2em;
+    }
+    .main h2 span {
+        font-size: 1.8em;
+    }
+    .main h3 {
+        font-size: 0.9em;
+    }
+    .icons {
+        font-size: 1em;
+        padding: 5px;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-title {
+        font-size: 1.1em;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: rgb(15, 27, 37);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+/* الزر الخاص بالقائمة الجانبية */
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    color: #a4f1ff;
+    cursor: pointer;
+}
+
+/* تنسيق القائمة الجانبية */
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #0f1b25;
+    z-index: 1000;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.sidebar.active {
+    display: block;
+    transform: translateX(0);
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: #a4f1ff;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #3e5a5f;
+    color: #ffffff;
+}
+
+/* إخفاء القائمة العادية وتفعيل الزر على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">BREAK</a>
+        <nav class="navigation">
+            <a href="#">عربي</a>
+            <a href="#services">Services</a>
+            <a href="#project">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+<!-- القائمة الجانبية -->
+<div class="sidebar" id="sidebar">
+    <a href="#" onclick="toggleSidebar()">عربي</a>
+    <a href="#services" onclick="toggleSidebar()">Services</a>
+    <a href="#project" onclick="toggleSidebar()">Projects</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
+</div>
+
+
+    <section class="main">
+        <div class="content">
+            <h2>Break<br><span>Web Developer</span></h2>
+            <h3>Specialist in designing and developing websites and web applications</h3>
+            <a href="#" class="main-btn">Read More</a>
+            <div class="icons">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards" id="services">
+        <h2 class="title">Services</h2>
+        <div class="content-2">
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fab fa-apple"></i>
+                </div>
+                <div class="info">
+                    <h3>App Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quidem.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="info">
+                    <h3>Software Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quidem.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="info">
+                    <h3>Graphic Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quidem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="title-2">Contact</h2>
+        <div class="content-2">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone</h3>
+                    <p>123-456-7890</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>Qp5pU@example.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="project">
+        <h2 class="title-1">Project</h2>
+        <div class="content-2">
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/1.png">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Category</p>
+                    <strong class="project-title">
+                        <span>coming soon</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/1.png">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Category</p>
+                    <strong class="project-title">
+                        <span>coming soon</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/1.png">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Category</p>
+                    <strong class="project-title">
+                        <span>coming soon</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/1.png">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Category</p>
+                    <strong class="project-title">
+                        <span>coming soon</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="footer">
+        <p class="footer-title">Copyrights @ <span>Break</span></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+    <script>
+        // JavaScript للتحكم في إظهار وإخفاء القائمة الجانبية
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>

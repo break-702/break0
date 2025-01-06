@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <title>BREAK</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #496983;
+      }
+
+      header {
+        background-color: rgb(15, 27, 37);
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+      }
+
+      .description {
+        color: #a4f1ff;
+      }
+
+      .logo {
+        text-decoration: none;
+        color: #3ad8f4;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.8em;
+      }
+
+      .navigation a {
+        color: #a4f1ff;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: 500;
+        padding-left: 30px;
+      }
+
+      .navigation a:hover {
+        color: #567e85;
+      }
+
+      section {
+        padding: 100px 200px;
+      }
+
+      .main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: url(images/backgruond00.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .main h2 {
+        color: #ffffff;
+        font-size: 1.4em;
+        font-weight: 500;
+      }
+
+      .main h3 {
+        color: #ffffff;
+        font-size: 1em;
+        font-weight: 600;
+      }
+
+      h1 {
+        display: inline-block;
+        margin-top: 10px;
+        color: #a4f1ff;
+        font-size: 10vh;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        display: inline-block;
+        margin-top: 10px;
+        color: #ffffff;
+        font-size: 2em;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .main-btn {
+        color: #0f0d8b;
+        background-color: #a4f1ff;
+        border-radius: 20px;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-top: 10px;
+        display: inline-block;
+        padding: 0.9375em 2.1875em;
+        letter-spacing: 1px;
+        border-radius: 15px;
+        transition: 0.7s ease;
+      }
+
+      .main-btn:hover {
+        background-color: #3e5a5f;
+        color: #ffffff;
+        transform: scale(1.1);
+      }
+
+      .icons {
+        color: #a4f1ff;
+        font-size: 1.5em;
+        padding: 10px 20px;
+        padding-right: 30px;
+      }
+
+      .icons a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .icons:hover {
+        color: #3e5a5f;
+      }
+
+      .title {
+        /*  عنوان الخدمات */
+        display: flex;
+        justify-content: center;
+        color: #a4f1ff;
+        font-size: 2.2em;
+        font-weight: 800;
+        margin-bottom: 30px;
+        text-shadow: 0px 0px 19px #11f7ff;
+      }
+
+      .title-2 {
+        /*عنوان الاتصال  */
+        display: flex;
+        justify-content: center;
+        color: #feffff;
+        font-size: 2.2em;
+        font-weight: 800;
+        margin-bottom: 30px;
+      }
+
+      .content-2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        background-color: #ffffff;
+        width: 21.25em;
+        box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+        border-radius: 10px;
+        padding: 25px;
+        margin: 15px;
+        transition: 0.7s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.1);
+      }
+
+      .icon {
+        color: #207180;
+        font-size: 4em;
+        text-align: center;
+      }
+
+      .info h3 {
+        color: #000000;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      .info p {
+        color: #000000;
+        font-size: 1em;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+
+      .title-1 {
+        color: #46757e;
+        font-size: 2.2em;
+        font-weight: 800;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .project .content-2 {
+        margin-top: 30px;
+      }
+
+      .project-card {
+        background-color: #ffffff;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+        min-height: 14em;
+        width: 23em;
+        overflow: hidden;
+        border-radius: 10px color;
+        margin: 20px;
+        transition: 0.7s ease;
+      }
+
+      .project-card:hover {
+        transform: scale(1.1);
+      }
+
+      .project-card:hover .project-image img {
+        opacity: 0.9;
+      }
+      .project-image img {
+        width: 100%;
+      }
+      .project-image {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .project-info {
+        padding: 1em;
+      }
+
+      .project-category {
+        font-size: 0.8em;
+        color: #000000;
+      }
+
+      .project-title {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-top: 10px;
+      }
+
+      .more-details {
+        text-decoration: none;
+        color: #5798a3;
+        text-shadow: 50px 5px 50px #0a0a0a;
+      }
+
+      .more-details:hover {
+        color: #3e5a5f;
+      }
+
+      .contact {
+        background-image: url(images/backgruond11.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: #ffffff;
+      }
+
+      .footer {
+        background-color: #0f1b25;
+        color: #a4f1ff;
+        padding: 1.5em;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-title {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .footer-title span {
+        color: #719aa0;
+      }
+
+      .footer .social-icons a {
+        font-size: 15px;
+        padding: 0 12px 0 0;
+        color: #ffffff;
+      }
+      .menu-icon {
+        display: none;
+        color: #a4f1ff;
+        font-size: 1.8em;
+        cursor: pointer;
+      }
+      .main h2,
+      .main h3 {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        font-size: 1.4em;
+        font-weight: 500;
+      }
+
+      .main-btn {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        color: #ffffff;
+        background-color: #46757e;
+        border: none;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 0.9375em 2.1875em;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 5vh;
+        }
+        .main h3 {
+          font-size: 2vh;
+        }
+        .main {
+          height: 70vh;
+        }
+        .card {
+          padding: 10px;
+        }
+        .info p {
+          font-size: 8px;
+        }
+        .info h3 {
+          font-size: 11px;
+          font-weight: bold;
+        }
+        .icon {
+          font-size: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navigation {
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          top: 60px;
+          right: 0;
+          background-color: #0f1b25;
+          width: 100%;
+          height: calc(100% - 60px);
+          padding: 20px;
+          z-index: 1000;
+        }
+        .menu-icon {
+          display: block;
+        }
+
+        .navigation.active {
+          display: flex;
+        }
+
+        .navigation a {
+          padding: 15px 0;
+          font-size: 1.3em;
+          text-align: center;
+        }
+      }
+
+      /* الاستعلامات الإعلامية لجعل الموقع متجاوباً */
+      @media (max-width: 1200px) {
+        section {
+          padding: 80px 150px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        section {
+          padding: 70px 100px;
+        }
+        .navigation a {
+          padding-left: 15px;
+          font-size: 1em;
+        }
+        .content-2 {
+          flex-direction: column;
+          align-items: center;
+        }
+        .card,
+        .project-card {
+          width: 18em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          font-size: 1.5em;
+        }
+        .main h2 span {
+          font-size: 2.5em;
+        }
+        .main-btn {
+          font-size: 1em;
+          padding: 0.75em 1.75em;
+        }
+        section {
+          padding: 50px 20px;
+        }
+        .title,
+        .title-2,
+        .title-1 {
+          font-size: 1.8em;
+        }
+        .project-card,
+        .card {
+          width: 90%;
+          margin: 10px 0;
+        }
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background-color: rgb(15, 27, 37);
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+      }
+
+      /* الزر الخاص بالقائمة الجانبية */
+      .menu-toggle {
+        display: none;
+        font-size: 1.5em;
+        color: #a4f1ff;
+        cursor: pointer;
+      }
+
+      /* تنسيق القائمة الجانبية */
+      .sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100%;
+        background-color: #0f1b25;
+        z-index: 1000;
+        padding-top: 20px;
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+      }
+
+      .sidebar.active {
+        display: block;
+        transform: translateX(0);
+      }
+
+      .sidebar a {
+        display: block;
+        padding: 15px;
+        color: #a4f1ff;
+        text-decoration: none;
+        font-size: 1.1em;
+        text-align: center;
+      }
+
+      .sidebar a:hover {
+        background-color: #3e5a5f;
+        color: #ffffff;
+      }
+
+      /* إخفاء القائمة العادية وتفعيل الزر على الشاشات الصغيرة */
+      @media (max-width: 768px) {
+        .navigation {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">BREAK</a>
+      <nav class="navigation">
+        <a href="#" id="lang-toggle" onclick="toggleLanguage()">
+          <i class="fa-solid fa-globe"></i>
+        </a>
+        <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+        <a href="#project" data-en="Projects" data-ar="المشاريع">Projects</a>
+        <a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a>
+      </nav>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <a
+        href="#"
+        onclick="toggleSidebar(); toggleLanguage()"
+        id="lang-toggle-sidebar"
+      >
+        <i class="fa-solid fa-globe"></i>
+      </a>
+      <a
+        href="#services"
+        data-en="Services"
+        data-ar="الخدمات"
+        onclick="toggleSidebar()"
+        >Services</a
+      >
+      <a
+        href="#project"
+        data-en="Projects"
+        data-ar="المشاريع"
+        onclick="toggleSidebar()"
+        >Projects</a
+      >
+      <a
+        href="#contact"
+        data-en="Contact"
+        data-ar="التواصل"
+        onclick="toggleSidebar()"
+        >Contact</a
+      >
+    </div>
+
+    <section class="main">
+      <div class="content">
+        <h2 data-en="Break" data-ar="بـــــــريــــك">Break</h2>
+        <br />
+        <h1 data-en="Web Developer" data-ar="مطـور ويــب">Web Developer</h1>
+        <h3
+          data-en="Specialist in designing and developing websites and web applications"
+          data-ar="متخصص في تصميم وتطوير المواقع وتطبيقات الويب"
+        >
+          Specialist in designing and developing websites and web applications
+        </h3>
+        <a href="#" class="main-btn" data-en="Read More" data-ar="اقرأ المزيد"
+          >Read More</a
+        >
+        <div class="icons">
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-twitter"></a>
+          <a href="#" class="fab fa-instagram"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" id="services">
+      <h2 class="title" data-en="Services" data-ar="الخدمات">Services</h2>
+      <div class="content-2">
+        <div class="card">
+          <div class="icon"><i class="fab fa-apple"></i></div>
+          <div class="info">
+            <h3 data-en="App Development" data-ar="تطوير التطبيقات">
+              App Development
+            </h3>
+            <p
+              data-en="Software development services encompass the design and creation of software and applications to meet user or organizational needs
+                    , starting from requirements analysis and project planning to testing and maintenance. These services also provide custom solutions, 
+                    such as ERP and CRM systems, web and mobile applications, aimed at improving operational efficiency and boosting productivity."
+              data-ar="خدمات تطوير التطبيقات تهدف إلى إنشاء تطبيقات للهاتف المحمول وسطح المكتب تلبي احتياجات المستخدم أو أهداف العمل المحددة.
+                    تشمل هذه الخدمات جميع مراحل عملية التطوير، من التصميم الأولي والنماذج الأولية إلى البرمجة، الاختبار، والتشغيل. سواء كانت لأنظمة iOS أو 
+                    Android أو بيئات متعددة المنصات، تسعى خدمات تطوير التطبيقات إلى تقديم حلول سهلة الاستخدام وعالية الأداء تعزز التفاعل
+                    ، تسهّل العمليات،
+                    وتدعم النمو."
+            >
+              Application development services focus on creating mobile and
+              desktop applications that address specific user needs or business
+              goals. These services cover every stage of the development
+              process, from initial design and prototyping to coding, testing,
+              and deployment. Whether for iOS, Android, or cross-platform
+              environments, application development aims to deliver
+              user-friendly, high-performance solutions that enhance engagement,
+              streamline processes, and drive growth.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="info">
+            <h3 data-en="Software Development" data-ar="تطوير البرمجيات">
+              Software Development
+            </h3>
+            <p
+              data-en="Software development services encompass the design and creation of software and applications to meet user or organizational needs
+                    , starting from requirements analysis and project planning to testing and maintenance. These services also provide custom solutions, 
+                    such as ERP and CRM systems, web and mobile applications, aimed at improving operational efficiency and boosting productivity."
+              data-ar="خدمات تطوير البرمجيات تتضمن تصميم وتطوير البرمجيات والتطبيقات لتلبية احتياجات المستخدمين أو المؤسسات
+                    ، بدءًا من تحليل المتطلبات وتخطيط المشروع وصولًا إلى الاختبار والصيانة. تشمل الخدمات أيضًا تقديم حلول مخصصة مثل أنظمة 
+                    ERP وCRM، وتطبيقات الويب والجوال، لتحسين كفاءة العمل وزيادة الإنتاجية."
+            >
+              Software development services encompass the design and creation of
+              software and applications to meet user or organizational needs ,
+              starting from requirements analysis and project planning to
+              testing and maintenance. These services also provide custom
+              solutions, such as ERP and CRM systems, web and mobile
+              applications, aimed at improving operational efficiency and
+              boosting productivity.
+            </p>
+          </div>
+        </div>
+        <!-- data-en="" data-ar="" -->
+        <div class="card">
+          <div class="icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <div class="info">
+            <h3 data-en="Web design" data-ar="تصميم المواقع">Web design</h3>
+            <p
+              data-en="Web design services focus on creating visually appealing and user-friendly web interfaces using technologies like CSS and HTML. 
+                    These services include layout design, color selection, user experience optimization, and ensuring compatibility across different devices. 
+                    Web design emphasizes delivering an engaging visual experience that supports branding, facilitates navigation, and ensures a professional look with fast loading times."
+              data-ar="خدمات تصميم المواقع تهدف إلى إنشاء واجهات ويب جذابة وسهلة الاستخدام باستخدام تقنيات مثل CSS وHTML. 
+                    تشمل هذه الخدمات تصميم التخطيط، اختيار الألوان، تحسين تجربة المستخدم، وضمان توافق الموقع مع الأجهزة المختلفة
+                    . يركز تصميم المواقع على تقديم تجربة بصرية جذابة تدعم العلامة التجارية وتسهل التنقل، مما يضمن مظهرًا احترافيًا وسرعة تحميل عالية."
+            >
+              Web design services focus on creating visually appealing and
+              user-friendly web interfaces using technologies like CSS and HTML.
+              These services include layout design, color selection, user
+              experience optimization, and ensuring compatibility across
+              different devices. Web design emphasizes delivering an engaging
+              visual experience that supports branding, facilitates navigation,
+              and ensures a professional look with fast loading times.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="title" data-en="Contact" data-ar="التواصل">Contact</h2>
+      <div class="content-2">
+        <div class="card">
+          <div class="icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info">
+            <h3 data-en="Phone" data-ar="الهاتف">Phone</h3>
+            <p>123-456-7890</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info">
+            <h3 data-en="Email" data-ar="الايميل">Email</h3>
+            <p>Qp5pU@example.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project" id="project">
+      <h2 class="title" data-en="Project" data-ar="المشاريع">Project</h2>
+      <div class="content-2">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/4-0.jpeg" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Web Site</p>
+            <strong class="project-title">
+              <span>Task Manager</span>
+              <a href="project/Task-Manager/Task.php" class="more-details"
+                >More Details</a
+              >
+            </strong>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/3-0.png" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Game</p>
+            <strong class="project-title">
+              <span>X or O</span>
+              <a href="Game/X-or-O-game/index.html" class="more-details"
+                >More Details</a
+              >
+            </strong>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/5-0.png" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Game</p>
+            <strong class="project-title">
+              <span>The Cube</span>
+              <a href="Game/The-Cube-game/index.html" class="more-details"
+                >More Details</a
+              >
+            </strong>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/6-0.png" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Game</p>
+            <strong class="project-title">
+              <span>AI Chess!</span>
+              <a href="Game/AI-Chess-game/index.html" class="more-details"
+                >More Details</a
+              >
+            </strong>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/2-0.png" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Category</p>
+            <strong class="project-title">
+              <span>coming soon</span>
+              <a href="#" class="more-details">More Details</a>
+            </strong>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/8-0.png" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Shop</p>
+            <strong class="project-title">
+              <span>I N T E L</span>
+              <a href="#" class="more-details">More Details</a>
+              <!-- computer-store/index.php -->
+            </strong>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/2-0.png" />
+          </div>
+          <div class="project-info">
+            <p class="project-category">Category</p>
+            <strong class="project-title">
+              <span>coming soon</span>
+              <a href="#" class="more-details">More Details</a>
+            </strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <p
+        class="footer-title"
+        data-en="2024 ©  All rights reserved.BREAK"
+        data-ar="2024 © بريك. جميع الحقوق محفوظة."
+      >
+        2024 © All rights reserved.BREAK
+      </p>
+      <div class="social-icons">
+        <a href="/hp/index.html"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </section>
+
+    <script>
+      // JavaScript للتحكم في إظهار وإخفاء القائمة الجانبية
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", toggleSidebar);
+
+      function toggleLanguage() {
+        const langToggleText = document.getElementById("lang-toggle");
+        const langToggleSidebarText = document.getElementById(
+          "lang-toggle-sidebar"
+        );
+
+        // تحقق من اللغة الحالية (هل هي عربي أم إنجليزي)
+        const isEnglish =
+          document.documentElement.getAttribute("dir") === "ltr"; // نحدد اللغة بناءً على اتجاه الصفحة
+        const newLang = isEnglish ? "ar" : "en";
+
+        // تغيير النصوص في العناصر بناءً على اللغة
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          element.textContent = element.getAttribute(`data-${newLang}`);
+        });
+
+        // تحديث الأيقونة
+        langToggleText.innerHTML = '<i class="fa-solid fa-globe"></i>';
+        langToggleSidebarText.innerHTML = '<i class="fa-solid fa-globe"></i>';
+
+        // تغيير اتجاه الصفحة بناءً على اللغة الجديدة
+        document.documentElement.setAttribute("dir", isEnglish ? "rtl" : "ltr");
+      }
+    </script>
+  </body>
+</html>
